@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Container, ButtonToolbar } from "react-bootstrap";
 import Modallogin from "./Modallogin";
+import "./ALBeranda.css";
 import Register from "./Register";
 import "./Beranda.css";
 
@@ -9,18 +10,10 @@ class Beranda extends Component {
     return (
       <div>
         {/* header */}
-        <div className="headers">
+        <div className="ALheaders">
           <p>Land Tick</p>
-          {/* <button className="btn-daftar">Login</button> */}
-          <ButtonToolbar>
-            <Modallogin />
-          </ButtonToolbar>
-
-          <ButtonToolbar>
-            <Register />
-          </ButtonToolbar>
-          {/* <button className="btn-register">Register</button> */}
-          {/* <p>Land Trick</p> */}
+          <img className="ALBerandalogin" src={require("./Image/orang.PNG")} />
+          <h3>Jae</h3>
         </div>
         {/* slider */}
         <div className="slider1">

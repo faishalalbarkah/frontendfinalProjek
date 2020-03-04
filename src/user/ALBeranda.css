@@ -1,0 +1,28 @@
+.ALheaders {
+  height: 60px;
+  margin-top: 0px;
+}
+
+.ALheaders > p {
+  float: left;
+  margin-left: 120px;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 3px;
+  color: rgb(236, 122, 122);
+}
+
+.ALBerandalogin {
+  width: 80px;
+  height: 80px;
+  float: right;
+  margin-right: 100px;
+}
+
+.ALheaders > h3 {
+  float: right;
+  margin-right: 29px;
+  margin-top: 11px;
+  color: #ec7ab7;
+  font-size: 40px;
+}

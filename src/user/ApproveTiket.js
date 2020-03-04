@@ -30,7 +30,7 @@ class Ticket extends Component {
             <h3>Argo Wills</h3>
             <p>Eksekutif (H)</p>
             <div className="pending">
-              <p>Pending</p>
+              <p style={{ color: "green" }}>Approve</p>
             </div>
             <div className="tandapengenal">
               <p>No. Tanda Pengenal</p>

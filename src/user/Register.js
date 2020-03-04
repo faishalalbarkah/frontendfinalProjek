@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import Beranda from "./Beranda";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 function Register() {
@@ -51,7 +52,9 @@ function Register() {
             {/* <Button className="Footer" onClick={handleClose}>
                     Login
                     </Button> */}
-            <button className="footers">Register</button>
+            <Link to="/ALBeranda">
+              <button className="footers">Register</button>
+            </Link>
           </div>
         </Modal>
       </div>

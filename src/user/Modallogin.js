@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import { Modal, Form, Button, Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Modallogin.css";
 
 function Modallogin() {
@@ -43,9 +44,9 @@ function Modallogin() {
               {/* <Button className="Footer" onClick={handleClose}>
                         Login
                         </Button> */}
-              {/* <Link to="/Dashboard"> */}
-              <button className="footers">Login</button>
-              {/* </Link> */}
+              <Link to="/ALBeranda">
+                <button className="footers">Login</button>
+              </Link>
             </div>
           </nav>
         </Modal>

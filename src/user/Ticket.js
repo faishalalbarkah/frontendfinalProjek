@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Ticket.css";
+import Payment from "./Payment";
+import { Link } from "react-router-dom";
 
 class Ticket extends Component {
   render() {
@@ -89,9 +91,11 @@ class Ticket extends Component {
               <p>Email</p>
               <p style={{ color: "#959595" }}>Jojon@gmail.com</p>
             </div>
-            <div className="btn-bawah">
-              <button>Bayar Sekarang</button>
-            </div>
+            <Link to="Payment">
+              <div className="btn-bawah">
+                <button>Bayar Sekarang</button>
+              </div>
+            </Link>
           </div>
           {/* end kanan */}
         </div>

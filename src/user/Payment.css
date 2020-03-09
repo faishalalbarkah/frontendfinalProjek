@@ -4,20 +4,6 @@
   box-shadow: 0 0 5px 0 black;
 }
 
-.landticc {
-  width: 170px;
-  height: 50px;
-  margin-left: 110px;
-}
-
-.profileorang {
-  width: 60px;
-  height: 50px;
-  float: right;
-  margin-top: 5px;
-  margin-right: 140px;
-}
-
 .Paymentheader > p {
   font-size: 40px;
   float: right;

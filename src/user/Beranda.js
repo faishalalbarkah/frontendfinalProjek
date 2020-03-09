@@ -48,7 +48,7 @@ class Beranda extends Component {
           <div className="tiketapitengah">
             <p>Tiket Kereta Api</p>
             <div id="isitiketapi">
-              <h2>Asal</h2>
+              <h3>Asal</h3>
               <input className="asal" type="text" />
 
               <input className="chekbox" type="checkbox" />
@@ -76,7 +76,7 @@ class Beranda extends Component {
           </div>
 
           <div className="tiketapikanan">
-            <h2>Tujuan</h2>
+            <h3>Tujuan</h3>
             <input className="tujuan" type="text" />
 
             <div>
@@ -117,12 +117,21 @@ class Beranda extends Component {
                 <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
                   Argo Wills
                 </th>
+                <div id="classtypetrain">
+                  <p>Ekonomi</p>
+                </div>
                 <th style={{ paddingTop: "30px", paddingLeft: "120px" }}>
                   05.00
                 </th>
+                <div id="classstasiunawal">
+                  <p>Gambir</p>
+                </div>
                 <th style={{ paddingTop: "30px", paddingLeft: "100px" }}>
                   10.05
                 </th>
+                <div id="classstasiunakhir">
+                  <p>Senin</p>
+                </div>
                 <th style={{ paddingTop: "30px", paddingLeft: "70px" }}>
                   5j 05m
                 </th>

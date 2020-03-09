@@ -1,23 +1,107 @@
 import React, { Component } from "react";
-import { Row, Col, Container, ButtonToolbar } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Container,
+  ButtonToolbar,
+  DropdownButton,
+  Dropdown
+} from "react-bootstrap";
 import Modallogin from "./Modallogin";
 import "./ALBeranda.css";
 import Register from "./Register";
+import KonfirmasiTiket from "./KonfirmasiTiket";
+import { Link } from "react-router-dom";
 import "./Beranda.css";
+import Header from "./Header";
 
 class Beranda extends Component {
   render() {
     return (
       <div>
         {/* header */}
-        <div className="ALheaders">
+        <Header />
+        {/* <div className="ALheaders">
           <p>Land Tick</p>
-          <img className="ALBerandalogin" src={require("./Image/orang.PNG")} />
+          <div class="dropdown">
+            <img
+              className="ALBerandalogin"
+              src={require("./Image/orang.PNG")}
+            />
+
+            <div class="dropdown-child">
+              <div>
+                <Link to="/Ticket">
+                  <img
+                    className="dropdownkereta"
+                    src={require("./Image/keretadropdown.PNG")}
+                  />
+                  <p
+                    style={{
+                      marginLeft: "60px",
+                      marginTop: "-30px",
+                      color: " #878787 ;",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Kereta Saya
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link to="/Payment">
+                  <img
+                    className="dropdownpayment"
+                    src={require("./Image/dropdownpayment.PNG")}
+                  />
+                  <p
+                    style={{
+                      marginLeft: "60px",
+                      marginTop: "-30px",
+                      color: " #878787 ;",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Payment
+                  </p>
+                </Link>
+              </div>
+              <hr
+                style={{
+                  width: "180px",
+                  border: "bold",
+                  background: "#EC7A7A "
+                }}
+              ></hr>
+              <div>
+                <Link to="/Beranda">
+                  <img
+                    className="dropdownlogout"
+                    src={require("./Image/logoutdropdown.PNG")}
+                  />
+                  <p
+                    style={{
+                      marginLeft: "61px",
+                      marginTop: "-32px",
+                      color: " #878787 ;",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Logout
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <h3>Jae</h3>
-        </div>
+        </div> */}
         {/* slider */}
         <div className="slider1">
-          <div className="fortext">
+          <div className="fortext1">
             <h2>Selamat Pagi, Ticket Seekers !</h2>
             <span>ingin Pulkam dengan Good Deal ?</span>
             <p>Masuk dan Daftar Sekarang!!!</p>
@@ -41,7 +125,7 @@ class Beranda extends Component {
           <div className="tiketapitengah">
             <p>Tiket Kereta Api</p>
             <div id="isitiketapi">
-              <h2>Asal</h2>
+              <h3>Asal</h3>
               <input className="asal" type="text" />
 
               <input className="chekbox" type="checkbox" />
@@ -54,7 +138,7 @@ class Beranda extends Component {
               >
                 Pulang Pergi
               </p>
-              <h3>Tanggal Berangkat</h3>
+              <h4>Tanggal Berangkat</h4>
               <input
                 style={{
                   width: "160px",
@@ -69,7 +153,7 @@ class Beranda extends Component {
           </div>
 
           <div className="tiketapikanan">
-            <h2>Tujuan</h2>
+            <h3>Tujuan</h3>
             <input className="tujuan" type="text" />
 
             <div>
@@ -104,7 +188,31 @@ class Beranda extends Component {
               </th>
             </tr>
           </table>
-          <div className="pesanan1">
+          <ButtonToolbar>
+            <KonfirmasiTiket />
+          </ButtonToolbar>
+          {/* <div className="pesanan1">
+            <table style={{ marginLeft: "20px" }}>
+              <tr>
+                <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
+                  Argo Wills
+                </th>
+                <th style={{ paddingTop: "30px", paddingLeft: "120px" }}>
+                  05.00
+                </th>
+                <th style={{ paddingTop: "30px", paddingLeft: "100px" }}>
+                  10.05
+                </th>
+                <th style={{ paddingTop: "30px", paddingLeft: "70px" }}>
+                  5j 05m
+                </th>
+                <th style={{ paddingTop: "30px", paddingLeft: "210px" }}>
+                  Rp. 250.000
+                </th>
+              </tr>
+            </table>
+          </div> */}
+          {/* <div className="pesanan2">
             <table style={{ marginLeft: "20px" }}>
               <tr>
                 <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
@@ -125,7 +233,7 @@ class Beranda extends Component {
               </tr>
             </table>
           </div>
-          <div className="pesanan2">
+          <div className="pesanan3"> 
             <table style={{ marginLeft: "20px" }}>
               <tr>
                 <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
@@ -145,28 +253,7 @@ class Beranda extends Component {
                 </th>
               </tr>
             </table>
-          </div>
-          <div className="pesanan3">
-            <table style={{ marginLeft: "20px" }}>
-              <tr>
-                <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
-                  Argo Wills
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "120px" }}>
-                  05.00
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "100px" }}>
-                  10.05
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "70px" }}>
-                  5j 05m
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "210px" }}>
-                  Rp. 250.000
-                </th>
-              </tr>
-            </table>
-          </div>
+          </div> */}
         </div>
         {/* footer */}
         <div className="footer"></div>

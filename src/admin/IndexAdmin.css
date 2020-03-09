@@ -1,4 +1,4 @@
-.Adminheader {
+/* .Adminheader {
   height: 60px;
   background: #ffffff;
   box-shadow: 0 0 5px 0 black;
@@ -10,7 +10,7 @@
   margin-right: 16px;
   margin-top: -5px;
   color: rgb(236, 122, 122);
-}
+} */
 
 .AdminBody > p {
   font-weight: 1000;
@@ -37,13 +37,15 @@
   height: 20px;
   /* margin: 5px; */
   cursor: pointer;
-  margin-left: 22px;
+  margin-left: 25px;
   margin-top: -20px;
 }
 
 #delete {
   width: 20px;
-  margin: 5px;
+  /* margin: 5px; */
   height: 20px;
   cursor: pointer;
+  margin-left: 50px;
+  margin-top: -49px;
 }

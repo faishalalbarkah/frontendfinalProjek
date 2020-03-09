@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import "./Ticket.css";
 import "./ApproveTiket.css";
+import Header from "./Header";
 
 class Ticket extends Component {
   render() {
     return (
       <div>
         {/* header */}
-        <div className="header">
+        {/* <div className="header">
           <p>Land Tick</p>
           <h3>Joni</h3>
           <img className="gambar_header" src={require("./Image/orang.PNG")} />
-        </div>
+        </div> */}
+        <Header />
         {/* body */}
 
         <div className="tiketsaya">

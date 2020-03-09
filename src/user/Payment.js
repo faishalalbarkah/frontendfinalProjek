@@ -2,16 +2,18 @@ import React, { Component } from "react";
 import { Row, Col, ButtonToolbar } from "react-bootstrap";
 import ModalKonfrimasi from "./ModalKonfirmasi";
 import "./Payment.css";
+import Header from "./Header";
 
 class Payment extends Component {
   render() {
     return (
       <div>
-        <div className="Paymentheader">
+        <Header />
+        {/* <div className="Paymentheader">
           <img className="landticc" src={require("./Image/landtick.PNG")} />
           <img className="profileorang" src={require("./Image/orang.PNG")} />
           <p>Jae</p>
-        </div>
+        </div> */}
 
         <div className="Paymentbodyleft">
           <div className="invoicepayment">

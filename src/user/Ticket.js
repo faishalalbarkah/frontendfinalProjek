@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Ticket.css";
 import Payment from "./Payment";
+import "./ALBeranda.css";
+import Header from "./Header";
 import { Link } from "react-router-dom";
 
 class Ticket extends Component {
@@ -8,11 +10,81 @@ class Ticket extends Component {
     return (
       <div>
         {/* header */}
-        <div className="header">
+        <Header />
+        {/* <div className="header">
           <p>Land Tick</p>
           <h3>Joni</h3>
+
+          <div class="dropdown"> 
           <img className="gambar_header" src={require("./Image/orang.PNG")} />
-        </div>
+         <div class="dropdown-child"> 
+              <div>
+                <Link to="/Ticket">
+                  <img
+                    className="dropdownkereta"
+                    src={require("./Image/keretadropdown.PNG")}
+                  />
+                  <p
+                    style={{
+                      marginLeft: "60px",
+                      marginTop: "-30px",
+                      color: " #878787 ;",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Kereta Saya
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link to="/Payment">
+                  <img
+                    className="dropdownpayment"
+                    src={require("./Image/dropdownpayment.PNG")}
+                  />
+                  <p
+                    style={{
+                      marginLeft: "60px",
+                      marginTop: "-30px",
+                      color: " #878787 ;",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Payment
+                  </p>
+                </Link>
+              </div>
+              <hr
+                style={{
+                  width: "180px",
+                  border: "bold",
+                  background: "#EC7A7A "
+                }}
+              ></hr>
+              <div>
+                <Link to="/Beranda">
+                  <img
+                    className="dropdownlogout"
+                    src={require("./Image/logoutdropdown.PNG")}
+                  />
+                  <p
+                    style={{
+                      marginLeft: "61px",
+                      marginTop: "-32px",
+                      color: " #878787 ;",
+                      fontWeight: "bold",
+                      cursor: "pointer"
+                    }}
+                  >
+                    Logout
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div> */}
         {/* body */}
 
         <div className="tiketsaya">

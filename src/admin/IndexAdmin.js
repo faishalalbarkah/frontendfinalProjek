@@ -3,16 +3,18 @@ import { Container, ButtonToolbar } from "react-bootstrap";
 import "./IndexAdmin.css";
 import ModalInvoice from "./ModalInvoice";
 import EditStatus from "./EditStatus";
+import HeaderAdmin from "./HeaderAdmin";
 
 class IndexAdmin extends Component {
   render() {
     return (
       <div>
-        <div className="Adminheader">
+        {/* <div className="Adminheader">
           <img className="landticc" src={require("./Img/landtick.PNG")} />
           <img className="profileorang" src={require("./Img/orang.PNG")} />
           <p>Admin</p>
-        </div>
+        </div> */}
+        <HeaderAdmin />
         <div className="AdminBody">
           <p>List Transaksi</p>
         </div>
@@ -44,8 +46,8 @@ class IndexAdmin extends Component {
                   <ButtonToolbar>
                     <EditStatus />
                   </ButtonToolbar>
-                  {/* <img id="pensil" src={require("./Img/pensil.PNG")} />
-                  <img id="delete" src={require("./Img/delete.PNG")} /> */}
+                  {/* <img id="pensil" src={require("./Img/pensil.PNG")} /> */}
+                  <img id="delete" src={require("./Img/delete.PNG")} />
                 </td>
               </tr>
             </table>

@@ -14,92 +14,18 @@ import KonfirmasiTiket from "./KonfirmasiTiket";
 import { Link } from "react-router-dom";
 import "./Beranda.css";
 import Header from "./Header";
+import { connect } from "react-redux";
+import { GETTIKETA } from "../_actions/GetTiketA";
 
 class Beranda extends Component {
+  // constructor(){
+  //   super()
+  //   this.state
+  // }
   render() {
     return (
       <div>
-        {/* header */}
         <Header />
-        {/* <div className="ALheaders">
-          <p>Land Tick</p>
-          <div class="dropdown">
-            <img
-              className="ALBerandalogin"
-              src={require("./Image/orang.PNG")}
-            />
-
-            <div class="dropdown-child">
-              <div>
-                <Link to="/Ticket">
-                  <img
-                    className="dropdownkereta"
-                    src={require("./Image/keretadropdown.PNG")}
-                  />
-                  <p
-                    style={{
-                      marginLeft: "60px",
-                      marginTop: "-30px",
-                      color: " #878787 ;",
-                      fontWeight: "bold",
-                      cursor: "pointer"
-                    }}
-                  >
-                    Kereta Saya
-                  </p>
-                </Link>
-              </div>
-              <div>
-                <Link to="/Payment">
-                  <img
-                    className="dropdownpayment"
-                    src={require("./Image/dropdownpayment.PNG")}
-                  />
-                  <p
-                    style={{
-                      marginLeft: "60px",
-                      marginTop: "-30px",
-                      color: " #878787 ;",
-                      fontWeight: "bold",
-                      cursor: "pointer"
-                    }}
-                  >
-                    Payment
-                  </p>
-                </Link>
-              </div>
-              <hr
-                style={{
-                  width: "180px",
-                  border: "bold",
-                  background: "#EC7A7A "
-                }}
-              ></hr>
-              <div>
-                <Link to="/Beranda">
-                  <img
-                    className="dropdownlogout"
-                    src={require("./Image/logoutdropdown.PNG")}
-                  />
-                  <p
-                    style={{
-                      marginLeft: "61px",
-                      marginTop: "-32px",
-                      color: " #878787 ;",
-                      fontWeight: "bold",
-                      cursor: "pointer"
-                    }}
-                  >
-                    Logout
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <h3>Jae</h3>
-        </div> */}
-        {/* slider */}
         <div className="slider1">
           <div className="fortext1">
             <h2>Selamat Pagi, Ticket Seekers !</h2>
@@ -179,8 +105,8 @@ class Beranda extends Component {
               <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
                 Berangkat
               </th>
-              <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>Tiba</th>
-              <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
+              <th style={{ paddingTop: "30px", paddingLeft: "102px" }}>Tiba</th>
+              <th style={{ paddingTop: "30px", paddingLeft: "135px" }}>
                 Durasi
               </th>
               <th style={{ paddingTop: "30px", paddingLeft: "200px" }}>
@@ -191,71 +117,7 @@ class Beranda extends Component {
           <ButtonToolbar>
             <KonfirmasiTiket />
           </ButtonToolbar>
-          {/* <div className="pesanan1">
-            <table style={{ marginLeft: "20px" }}>
-              <tr>
-                <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
-                  Argo Wills
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "120px" }}>
-                  05.00
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "100px" }}>
-                  10.05
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "70px" }}>
-                  5j 05m
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "210px" }}>
-                  Rp. 250.000
-                </th>
-              </tr>
-            </table>
-          </div> */}
-          {/* <div className="pesanan2">
-            <table style={{ marginLeft: "20px" }}>
-              <tr>
-                <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
-                  Argo Wills
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "120px" }}>
-                  05.00
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "100px" }}>
-                  10.05
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "70px" }}>
-                  5j 05m
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "210px" }}>
-                  Rp. 250.000
-                </th>
-              </tr>
-            </table>
-          </div>
-          <div className="pesanan3"> 
-            <table style={{ marginLeft: "20px" }}>
-              <tr>
-                <th style={{ paddingTop: "30px", paddingLeft: "80px" }}>
-                  Argo Wills
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "120px" }}>
-                  05.00
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "100px" }}>
-                  10.05
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "70px" }}>
-                  5j 05m
-                </th>
-                <th style={{ paddingTop: "30px", paddingLeft: "210px" }}>
-                  Rp. 250.000
-                </th>
-              </tr>
-            </table>
-          </div> */}
         </div>
-        {/* footer */}
         <div className="footer"></div>
       </div>
     );

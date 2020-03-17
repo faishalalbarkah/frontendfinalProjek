@@ -5,6 +5,10 @@ import AddTiket from "./AddTiket";
 import { Link } from "react-router-dom";
 
 class HeaderAdmin extends Component {
+  removeClick = () => {
+    window.localStorage.removeItem("token");
+    window.location.href = "http://localhost:3000/";
+  };
   render() {
     return (
       <div className="Adminheader">
@@ -53,6 +57,7 @@ class HeaderAdmin extends Component {
                     fontWeight: "bold",
                     cursor: "pointer"
                   }}
+                  onClick={this.removeClick}
                 >
                   Logout
                 </p>

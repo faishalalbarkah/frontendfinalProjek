@@ -10,3 +10,17 @@ export const LOGINA = data => {
     })
   };
 };
+
+const token = window.localStorage.getItem("token");
+export const cekUser = () => {
+  return {
+    type: "GET_USER",
+    payload: axios({
+      method: "GET",
+      url: "http://localhost:4300/api/v2/user",
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  };
+};

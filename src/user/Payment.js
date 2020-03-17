@@ -3,17 +3,53 @@ import { Row, Col, ButtonToolbar } from "react-bootstrap";
 import ModalKonfrimasi from "./ModalKonfirmasi";
 import "./Payment.css";
 import Header from "./Header";
+import { getPaymnentA } from "../_actions/PaymentA";
+import { USERTIKETA } from "../_actions/UserTiketGet";
+import { getPaymentR } from "../_reducers/PaymentR";
+import { connect } from "react-redux";
 
 class Payment extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: ""
+    };
+  }
+
+  componentDidMount() {
+    const getId = window.location.href;
+    const id = getId.substr(33, 10);
+
+    this.props.getPaymnentA(id);
+  }
+  // componentDidMount() {
+  //   this.props.getPaymnentA();
+  // }
+  // componentDidMount() {
+  //   // const { fromNotifications } = this.props.location.state;
+  //   // console.log(fromNotifications);
+  //   // fetch(`https://api.twitter.com/user/${handle}`)
+  //   //   .then((user) => {
+  //   //     this.setState(() => ({ user }))
+  //   //   })
+  // }
+
+  getPayId = e => {
+    this.props.getPaymnentA(this.props.id);
+    // this.setState({ value: e.target.id });
+  };
   render() {
+    const { dataPayment } = this.props.getPaymentR;
+    console.log(dataPayment);
+
+    // const AllData = this.props.id;
+    // console.log("data =>", DataAll);
+    // console.log(this.props.locatio);
+
     return (
       <div>
         <Header />
-        {/* <div className="Paymentheader">
-          <img className="landticc" src={require("./Image/landtick.PNG")} />
-          <img className="profileorang" src={require("./Image/orang.PNG")} />
-          <p>Jae</p>
-        </div> */}
 
         <div className="Paymentbodyleft">
           <div className="invoicepayment">
@@ -44,28 +80,29 @@ class Payment extends Component {
               <p>Email</p>
             </div>
             <hr></hr>
+
             <div id="isipaymenttandapengenal">
               <p>090808909</p>
             </div>
             <div id="isipaymentnamapemesan">
-              <p>Jae</p>
+              <p>{dataPayment.nama}</p>
             </div>
             <div id="isipaymentnohp">
-              <p>08792718909</p>
+              <p></p>
             </div>
             <div id="isipaymentemail">
-              <p>Jae@gmail.com</p>
+              <p></p>
             </div>
           </div>
           <div className="rincianharga">
             <h3>Rincian Harga</h3>
           </div>
           <div className="tabelpayment">
-            <h5>Argo Wilis (Dewasa)X1</h5>
-            <p>Rp.250.000</p>
+            {/* <h5>{dataPayment.tiket.nama_train}</h5> */}
+            {/* <p>{DataAll.tiket.price}</p> */}
             <div className="Paymenttotal">
               <p>Total :</p>
-              <h3>Rp.250.000</h3>
+              {/* <h3>{DataAll.total_price}</h3> */}
             </div>
             <ButtonToolbar>
               <ModalKonfrimasi />
@@ -86,30 +123,46 @@ class Payment extends Component {
             <img src={require("./Image/barcodeabu.PNG")} />
           </div>
           <div id="barcodekeretapiibawah">
-            <h3>Argo Wills</h3>
-            <p>Eksekutif(H)</p>
+            {/* <h3>{DataAll.tiket.nama_train}</h3> */}
+            {/* <p>{DataAll.type_train.name_type_train}</p> */}
             <img src={require("./Image/atasbawahabu.PNG")} />
           </div>
           <div id="jamberangkat">
-            <h3>05.00</h3>
+            {/* <h3>{DataAll.tiket.start_time}</h3> */}
             <p style={{ color: "#959595" }}>21 Febuari 2020</p>
           </div>
           <div id="jamsampai">
-            <h3>10.05</h3>
+            {/* <h3>{DataAll.tiket.arrival_time}</h3> */}
             <p style={{ color: "#959595" }}>21 Febuari 2020</p>
           </div>
           <div id="stasiunstart">
             <h3>Jakarta (GMR)</h3>
-            <p style={{ color: "#959595" }}>Stasiun Gambir</p>
+            {/* <p style={{ color: "#959595" }}>{DataAll.tiket.start_station}</p> */}
           </div>
           <div id="stasiunend">
             <h3>Surabaya (SBY)</h3>
-            <p style={{ color: "#959595" }}>Stasiun Gambir</p>
+            <p style={{ color: "#959595" }}>
+              {/* {DataAll.tiket.destination_station} */}
+            </p>
           </div>
         </div>
+        {/* {console.log("getorderr", this.props.getPaymentR)} */}
       </div>
     );
   }
 }
 
-export default Payment;
+const mapStateToProp = state => {
+  return {
+    USERTIKETR: state.USERTIKETR,
+    getPaymentR: state.getPaymentR
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    USERTIKETA: () => dispatch(USERTIKETA()),
+    getPaymnentA: id => dispatch(getPaymnentA(id))
+  };
+};
+export default connect(mapStateToProp, mapDispatchToProps)(Payment);

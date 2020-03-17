@@ -18,7 +18,6 @@ const LOGINR = (state = initialState, action) => {
     case "POST_LOGIN_FULFILLED":
       console.log("cek2");
 
-      window.localStorage.setItem("token", action.payload.data.token);
       return {
         ...state,
         data: action.payload.data,
@@ -34,6 +33,31 @@ const LOGINR = (state = initialState, action) => {
         error: true,
         dataErr: action.payload.data
       };
+    case "GET_USER_PENDING":
+      console.log("cek1");
+      return {
+        ...state, //titik tiga immutable
+        isLoading: true
+      };
+    case "GET_USER_FULFILLED":
+      // const token = window.localStorage.getItem("token");
+      return {
+        ...state,
+        data: action.payload.data.data,
+        isLoading: false,
+        isLogin: true
+        // error: false
+      };
+    case "GET_USER_REJECTED":
+      console.log("cek3");
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+        dataErr: action.payload.data
+      };
+
+    //cek user
     default:
       return state;
   }

@@ -16,13 +16,14 @@ class Register extends Component {
     super(props);
     this.state = {
       show: false,
-      namalengkap: "",
+      nama: "",
       username: "",
       email: "",
       password: "",
-      jeniskelamin: "",
+      gender: "",
       phone: "",
-      address: ""
+      address: "",
+      status: "false"
     };
   }
 
@@ -43,13 +44,14 @@ class Register extends Component {
   handleOnSubmit = e => {
     e.preventDefault();
     const data = {
-      namalengkap: this.state.namalengkap,
+      nama: this.state.nama,
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
-      jeniskelamin: this.state.jeniskelamin,
+      gender: this.state.gender,
       phone: this.state.phone,
-      address: this.state.address
+      address: this.state.address,
+      status: this.state.status
     };
     this.props.REGISA(data);
     console.log(data);
@@ -89,7 +91,7 @@ class Register extends Component {
                   <Form.Control
                     type="text"
                     placeholder="Nama Lengkap"
-                    name="namalengkap"
+                    name="nama"
                     onChange={this.handleChangeInput}
                   />
                 </Form.Group>
@@ -125,11 +127,11 @@ class Register extends Component {
                   <Form.Control
                     as="select"
                     // type="text"
-                    name="jeniskelamin"
+                    name="gender"
                     onChange={this.handleChangeInput}
                     placeholder="Jenis Kelamin"
                   >
-                    <option value="" selected disabled>
+                    <option selected disabled>
                       Choose
                     </option>
                     <option value="1">Male</option>

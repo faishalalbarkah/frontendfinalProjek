@@ -47,12 +47,12 @@
 }
 
 .Tiket {
-  position: absolute;
+  position: relative;
   width: 1035px;
   height: 344px;
   left: 232px;
-  top: 210px;
-
+  top: 140px;
+  margin-bottom: 40px;
   border: 1px solid #b7b7b7;
   box-sizing: border-box;
   border-radius: 5px;
@@ -128,7 +128,7 @@ h2 {
 }
 
 .tandapengenal {
-  margin-top: 80px;
+  margin-top: 74px;
   margin-left: 65px;
   font-family: Avenir;
   font-style: normal;
@@ -153,6 +153,7 @@ h2 {
   font-size: 18px;
   line-height: 25px;
   /* identical to box height */
+  margin-top: -7px;
 
   color: #b1b1b1;
 }
@@ -166,15 +167,16 @@ h2 {
 
 .start {
   margin-left: 300px;
-  margin-top: -242px;
+  margin-top: -230px;
 }
 
 .end {
   margin-left: 300px;
-  margin-top: 30px;
+  margin-top: 65px;
 }
 
 .namapemesan {
+  margin-top: 19px;
   margin-left: 300px;
   font-family: Avenir;
   font-style: normal;
@@ -193,7 +195,7 @@ h2 {
   width: 171px;
   height: 25px;
   margin-left: 300px;
-  margin-top: 40px;
+  margin-top: 61px;
   font-family: Avenir;
   font-style: normal;
   font-weight: normal;
@@ -214,17 +216,19 @@ h2 {
 
 .nohp {
   color: #000000;
-  margin-left: 461px;
+  margin-left: 441px;
+  padding-top: 2px;
 }
 
 .no_hp {
-  margin-left: 460px;
+  margin-left: 440px;
   color: #b1b1b1;
+  margin-top: 20px;
 }
 
 .email {
-  margin-left: 670px;
-  margin-top: -77px;
+  margin-left: 600px;
+  margin-top: -82px;
 }
 
 .btn-bawah {

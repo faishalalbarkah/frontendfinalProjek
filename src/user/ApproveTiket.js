@@ -56,18 +56,18 @@ class Ticket extends Component {
                 src={require("./Image/atasbawah.PNG")}
               />
             </div>
-            <div className="start">
+            <div style={{ marginTop: "-245px", marginLeft: "300px" }}>
               <h3>05.00</h3>
               <p style={{ color: "#959595" }}>24 Febuari 2020</p>
             </div>
-            <div className="end">
+            <div style={{ marginLeft: "300px", paddingTop: "17px" }}>
               <h3>10.05</h3>
               <p style={{ color: "#959595" }}>24 Febuari 2020</p>
             </div>
-            <div className="namapemesan">
+            <div className="namapemesan" style={{ marginTop: "2px" }}>
               <p>Nama Pemesan</p>
             </div>
-            <div className="anto_bawah">
+            <div className="anto_bawah" style={{ marginTop: "44px" }}>
               <p>Anto</p>
             </div>
           </div>

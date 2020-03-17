@@ -34,6 +34,30 @@ const REGISR = (state = initialState, action) => {
         // error: true,
         dataErr: action.payload
       };
+    case "GET_USER_PENDING":
+      console.log("cek1");
+      return {
+        ...state, //titik tiga immutable
+        isLoading: true
+      };
+    case "GET_USER_FULFILLED":
+      // const token = window.localStorage.getItem("token");
+      return {
+        ...state,
+        data: action.payload.data.data,
+        isLoading: false,
+        isLogin: true
+        // error: false
+      };
+    //get user
+    case "GET_USER_REJECTED":
+      console.log("cek3");
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+        dataErr: action.payload.data
+      };
     default:
       return state;
   }

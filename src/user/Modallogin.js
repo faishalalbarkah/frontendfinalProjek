@@ -134,7 +134,7 @@ class Modallogin extends Component {
 
         <div>
           {/* {data.token != null ? <Redirect to="./ALBeranda" /> : null} */}
-          <Modal show={this.state.tampil} onHide={this.handleLogin}>
+          <Modal show={this.state.tampil} onHide={this.handleClick}>
             <div>
               <Modal.Title className="formlogin">Login</Modal.Title>
               <p className="ModalX" onClick={this.handleClick}>

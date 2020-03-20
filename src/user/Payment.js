@@ -41,7 +41,44 @@ class Payment extends Component {
   };
   render() {
     const { dataPayment } = this.props.getPaymentR;
-    console.log(dataPayment);
+
+    let username = "";
+    let phone = "";
+    let email = "";
+    //tiket
+    let nama_train = "";
+    let price = "";
+    let start_time = "";
+    let arrival_time = "";
+    let start_station = "";
+    let destination_station = "";
+    //order
+    let total_price = "";
+
+    let name_type_train = "";
+
+    if (dataPayment[0]) {
+      if (dataPayment[0].user) {
+        username = dataPayment[0].user.username;
+        phone = dataPayment[0].user.phone;
+        email = dataPayment[0].user.email;
+        if (dataPayment[0].tiket) {
+          nama_train = dataPayment[0].tiket.nama_train;
+          price = dataPayment[0].tiket.price;
+          start_time = dataPayment[0].tiket.start_time;
+          arrival_time = dataPayment[0].tiket.arrival_time;
+          start_station = dataPayment[0].tiket.start_station;
+          destination_station = dataPayment[0].tiket.destination_station;
+          if (dataPayment[0].tiket.type_train) {
+            name_type_train = dataPayment[0].tiket.type_train.name_type_train;
+          }
+          if (dataPayment[0]) {
+            total_price = dataPayment[0].total_price;
+          }
+        }
+      }
+    }
+    console.log(username);
 
     // const AllData = this.props.id;
     // console.log("data =>", DataAll);
@@ -85,24 +122,24 @@ class Payment extends Component {
               <p>090808909</p>
             </div>
             <div id="isipaymentnamapemesan">
-              <p>{dataPayment.nama}</p>
+              <p>{username}</p>
             </div>
             <div id="isipaymentnohp">
-              <p></p>
+              <p>{phone}</p>
             </div>
             <div id="isipaymentemail">
-              <p></p>
+              <p>{email}</p>
             </div>
           </div>
           <div className="rincianharga">
             <h3>Rincian Harga</h3>
           </div>
           <div className="tabelpayment">
-            {/* <h5>{dataPayment.tiket.nama_train}</h5> */}
-            {/* <p>{DataAll.tiket.price}</p> */}
+            <h5>{nama_train}</h5>
+            <p>{price}</p>
             <div className="Paymenttotal">
               <p>Total :</p>
-              {/* <h3>{DataAll.total_price}</h3> */}
+              <h3>{total_price}</h3>
             </div>
             <ButtonToolbar>
               <ModalKonfrimasi />
@@ -123,27 +160,25 @@ class Payment extends Component {
             <img src={require("./Image/barcodeabu.PNG")} />
           </div>
           <div id="barcodekeretapiibawah">
-            {/* <h3>{DataAll.tiket.nama_train}</h3> */}
-            {/* <p>{DataAll.type_train.name_type_train}</p> */}
+            <h3>{nama_train}</h3>
+            <p>{name_type_train}</p>
             <img src={require("./Image/atasbawahabu.PNG")} />
           </div>
           <div id="jamberangkat">
-            {/* <h3>{DataAll.tiket.start_time}</h3> */}
+            <h3>{start_time}</h3>
             <p style={{ color: "#959595" }}>21 Febuari 2020</p>
           </div>
           <div id="jamsampai">
-            {/* <h3>{DataAll.tiket.arrival_time}</h3> */}
+            <h3>{arrival_time}</h3>
             <p style={{ color: "#959595" }}>21 Febuari 2020</p>
           </div>
           <div id="stasiunstart">
             <h3>Jakarta (GMR)</h3>
-            {/* <p style={{ color: "#959595" }}>{DataAll.tiket.start_station}</p> */}
+            <p style={{ color: "#959595" }}>{start_station}</p>
           </div>
           <div id="stasiunend">
             <h3>Surabaya (SBY)</h3>
-            <p style={{ color: "#959595" }}>
-              {/* {DataAll.tiket.destination_station} */}
-            </p>
+            <p style={{ color: "#959595" }}>{destination_station}</p>
           </div>
         </div>
         {/* {console.log("getorderr", this.props.getPaymentR)} */}

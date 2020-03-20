@@ -5,13 +5,15 @@ import "./EditStatus.css";
 import { connect } from "react-redux";
 import { Dashup } from "../_actions/DashA";
 import { DashById } from "../_actions/DashA";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 class EditStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
       show: false,
-      status: "",
+      status: "Approved",
       error: false,
       infoModal: false
     };
@@ -25,10 +27,29 @@ class EditStatus extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    // console.log(this.props.data.id);
+
     if (this.state.status !== "") {
       const id = this.props.id;
       const data = { status: this.state.status };
-      this.props.Dashup(id, { status: this.state.status });
+      const token = localStorage.getItem("token");
+      axios({
+        method: "PATCH",
+        data: {
+          status: this.state.status
+        },
+        url: "http://localhost:4300/api/v2/order/" + this.props.data.id,
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(res => {
+          window.location.href = "http://localhost:3000/IndexAdmin";
+        })
+        .catch(err => {
+          console.log(err.message);
+        });
     } else {
       this.setState({
         error: true
@@ -43,15 +64,20 @@ class EditStatus extends Component {
     this.setState({ show: true });
   };
 
-  getEdit = () => {
-    let data = {
-      status: "Cancels"
-    };
-    this.props.Dashup(this.props.id, data);
+  getEdit = e => {
+    // let data = {
+    //   status: this.state.status
+    // };
+    // this.props.Dashup(this.props.id, data);
+    // this.handleShow();
+    this.props.Dashup(this.props.id);
     this.handleShow();
   };
+
   render() {
-    const AllData = this.props.id;
+    const data = this.props.data;
+    // console.log("data admin =>", this.props.data);
+
     return (
       <>
         {/* <Button variant="primary" >
@@ -82,11 +108,7 @@ class EditStatus extends Component {
                     <Form.Label>
                       <h5>Jumlah Tiket</h5>
                     </Form.Label>
-                    <Form.Control
-                      disabled
-                      type="text"
-                      placeholder={AllData.qty}
-                    />
+                    <Form.Control disabled type="text" value={1} />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>
@@ -95,7 +117,8 @@ class EditStatus extends Component {
                     <Form.Control
                       disabled
                       type="text"
-                      placeholder={AllData.user.nama}
+                      value={data.user.nama}
+                      // placeholder={datadashup.user.nama}
                     />
                   </Form.Group>
                   <Form.Group controlId="formBasicPassword">
@@ -105,7 +128,8 @@ class EditStatus extends Component {
                     <Form.Control
                       disabled
                       type="text"
-                      placeholder={AllData.tiket.start_station}
+                      value={data.tiket.destination_station}
+                      // placeholder={datadashup.tiket.start_station}
                     />
                   </Form.Group>
                   <Form.Group controlId="formBasicPhone">
@@ -115,28 +139,25 @@ class EditStatus extends Component {
                     <Form.Control
                       disabled
                       type="text"
-                      placeholder={AllData.attachment}
+                      value={data.attachment}
+                      // placeholder={datadashup.attachment}
                     />
                   </Form.Group>
                   <Form.Group controlId="formBasicPhone">
-                    {/* <Form.Label>
-                      <h5>Status</h5>
-                    </Form.Label>
-                    <Form.Control type="text" handleSubmit={AllData.status} /> */}
                     <select
                       className="form-control input"
                       name="status"
                       // id="gender"
+                      as="Select"
                       onChange={this.handleChange}
                     >
-                      <option value=""> {AllData.status}</option>
-                      <option value="Approve">Approved</option>
+                      <option value="Approved">Approved</option>
                       <option value="Pending">Pending</option>
                       <option value="Cancel">Cancel</option>
                     </select>
                     <Form.Text className="text-danger"></Form.Text>
                   </Form.Group>
-                  <button onClick={this.getEdit} className="btn-edutstatus">
+                  <button type="submit" className="btn-edutstatus">
                     Save
                   </button>
                 </Form>
@@ -156,8 +177,8 @@ const mapStateToProp = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    Dashup: id => dispatch(Dashup(id)),
-    DashById: (id, data) => dispatch(DashById(id, data))
+    Dashup: (id, data) => dispatch(Dashup(id, data)),
+    DashById: datadash => dispatch(DashById(datadash))
   };
 };
 export default connect(mapStateToProp, mapDispatchToProps)(EditStatus);

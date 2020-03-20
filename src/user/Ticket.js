@@ -21,11 +21,12 @@ class Ticket extends Component {
 
   getPayment = id => {
     this.props.getPaymnentA(id);
+    window.location = "/Payment?id=" + id;
 
-    this.setState({
-      redirect: true,
-      data: this.props.getPayment
-    });
+    // this.setState({
+    //   redirect: true,
+    //   data: this.props.getPayment
+    // });
   };
 
   componentDidMount() {
@@ -51,14 +52,14 @@ class Ticket extends Component {
     // console.log(this.props.getPaymentR);
     return (
       <div>
-        {this.state.redirect
-          ? (window.location = "/Payment?id=" + 27)
+        {/* {this.state.redirect
+          ? (window.location = "/Payment?id=" + ${})
           : // <Redirect
             //   to={{
             //     pathname: `/Payment/id:${8}`
             //   }}
             // />
-            ""}
+            ""} */}
         {/* header */}
         <Header />
 

@@ -47,7 +47,7 @@ class IndexAdmin extends Component {
               <th style={{ paddingLeft: "100px" }}>Tiket</th>
               <th style={{ paddingLeft: "135px" }}>Bukti Transfer</th>
               <th style={{ paddingLeft: "50px" }}>Status Payment</th>
-              <th style={{ paddingLeft: "61px" }}>Action</th>
+              <th style={{ paddingLeft: "83px" }}>Action</th>
             </tr>
             {/* <div >
                 <br></br>
@@ -68,16 +68,14 @@ class IndexAdmin extends Component {
                         {index.attachment}
                       </td>
                       <td style={{ paddingLeft: "100px" }}>
-                        {index.status === "Approve" ? <h5>Approved</h5> : ""}
-                        {index.status === "Pending" ? <h5>Pending</h5> : ""}
-                        {index.status === "Cancel" ? <h5>Cancel</h5> : ""}
+                        <h5>{index.status}</h5>
                       </td>
                       <td style={{ paddingLeft: "90px" }}>
                         <ButtonToolbar>
                           <ModalInvoice id={index} />
                         </ButtonToolbar>
                         <ButtonToolbar>
-                          <EditStatus id={index} />
+                          <EditStatus data={index} />
                         </ButtonToolbar>
                         {/* <img id="pensil" src={require("./Img/pensil.PNG")} /> */}
                         <img id="delete" src={require("./Img/delete.PNG")} />

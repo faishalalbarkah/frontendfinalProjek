@@ -1,0 +1,13 @@
+.pembungkusdelete {
+  height: 400px;
+}
+
+.eticketdelete {
+  float: left;
+  margin-left: 40px;
+}
+
+.silangdelet {
+  color: red;
+  cursor: pointer;
+}

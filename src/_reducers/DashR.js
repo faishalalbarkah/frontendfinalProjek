@@ -2,8 +2,9 @@ const initialState = {
   datadash: [],
   datadashid: [],
   datadashup: [],
+  datadashdelete: [],
   dataErr: "",
-  isLoading: false
+  isLoading: false,
 };
 
 const DashRe = (state = initialState, action) => {
@@ -12,7 +13,7 @@ const DashRe = (state = initialState, action) => {
       console.log("cek1");
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
       };
 
     case "GET_DASH_FULFILLED":
@@ -21,7 +22,7 @@ const DashRe = (state = initialState, action) => {
       return {
         ...state,
         datadash: action.payload.data,
-        isLoading: false
+        isLoading: false,
         // isAdd: true
       };
 
@@ -30,7 +31,7 @@ const DashRe = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        dataErr: action.payload.response
+        dataErr: action.payload.response,
       };
     //edit
     // case "PATCH_DASH_PENDING":
@@ -58,11 +59,14 @@ const DashRe = (state = initialState, action) => {
     //     dataErr: action.payload.response
     //   };
     //get id
+
+    //Get ID
+
     case "GET_DASH_ID_PENDING":
       console.log("cek1");
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
       };
 
     case "GET_DASH_ID_FULFILLED":
@@ -71,7 +75,7 @@ const DashRe = (state = initialState, action) => {
       return {
         ...state,
         datadashid: action.payload.data.data,
-        isLoading: false
+        isLoading: false,
         // isAdd: true
       };
 
@@ -80,7 +84,34 @@ const DashRe = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        dataErr: action.payload.response
+        dataErr: action.payload.response,
+      };
+
+    //Delete
+
+    case "Delet_Dash_ID_PENDING":
+      console.log("cek1");
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case "Delet_Dash_ID_FULFILLED":
+      console.log("cek2", action.payload.data);
+      //   window.localStorage.getItem("token", action.payload.data.token);
+      return {
+        ...state,
+        datadashdelete: action.payload.data.data,
+        isLoading: false,
+        // isAdd: true
+      };
+
+    case "Delet_Dash_ID_REJECTED":
+      console.log("cek3");
+      return {
+        ...state,
+        isLoading: false,
+        dataErr: action.payload.response,
       };
     default:
       return state;

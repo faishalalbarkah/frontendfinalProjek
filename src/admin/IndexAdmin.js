@@ -3,6 +3,7 @@ import { Container, ButtonToolbar } from "react-bootstrap";
 import "./IndexAdmin.css";
 import ModalInvoice from "./ModalInvoice";
 import EditStatus from "./EditStatus";
+import ModalDelete from "./ModalDelete";
 import HeaderAdmin from "./HeaderAdmin";
 import { Redirect } from "react-router-dom";
 import { DashAc } from "../_actions/DashA";
@@ -77,8 +78,9 @@ class IndexAdmin extends Component {
                         <ButtonToolbar>
                           <EditStatus data={index} />
                         </ButtonToolbar>
-                        {/* <img id="pensil" src={require("./Img/pensil.PNG")} /> */}
-                        <img id="delete" src={require("./Img/delete.PNG")} />
+                        <ButtonToolbar>
+                          <ModalDelete data={index} />
+                        </ButtonToolbar>
                       </td>
                     </tr>
                   ))
@@ -93,15 +95,15 @@ class IndexAdmin extends Component {
   }
 }
 
-const mapStateToProp = state => {
+const mapStateToProp = (state) => {
   return {
-    DashRe: state.DashRe
+    DashRe: state.DashRe,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    DashAc: () => dispatch(DashAc())
+    DashAc: () => dispatch(DashAc()),
   };
 };
 export default connect(mapStateToProp, mapDispatchToProps)(IndexAdmin);

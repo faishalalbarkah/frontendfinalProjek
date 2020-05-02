@@ -1,7 +1,7 @@
 import Axios from "axios";
 // import { Redirect } from "react-router-dom";
 
-export const DashAc = data => {
+export const DashAc = (data) => {
   const token = localStorage.getItem("token");
   return {
     type: "GET_DASH",
@@ -9,10 +9,10 @@ export const DashAc = data => {
       method: "GET",
       url: "http://localhost:4300/api/v2/order",
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      data
-    })
+      data,
+    }),
   };
 };
 
@@ -24,14 +24,14 @@ export const Dashup = (id, data) => {
       method: "PATCH",
       url: `http://localhost:4300/api/v2/order/${id}`,
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      data: data
-    })
+      data: data,
+    }),
   };
 };
 
-export const DashById = id => {
+export const DashById = (id) => {
   const token = localStorage.getItem("token");
   return {
     type: "GET_DASH_ID",
@@ -39,8 +39,22 @@ export const DashById = id => {
       method: "GET",
       url: `http://localhost:4300/api/v2/order/${id}`,
       headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+  };
+};
+
+export const DashDelet = (id) => {
+  const token = localStorage.getItem("token");
+  return {
+    type: "Delet_Dash_ID",
+    payload: Axios({
+      method: "DELETE",
+      url: `http://localhost:4300/api/v2/order/${id}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
   };
 };

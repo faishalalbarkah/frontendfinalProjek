@@ -19,7 +19,7 @@ const reducers = combineReducers({
   DashRe,
   USERTIKETR,
   GetTiketIdR,
-  getPaymentR
+  getPaymentR,
 });
 
 const store = createStore(reducers, applyMiddleware(logger, promise));
